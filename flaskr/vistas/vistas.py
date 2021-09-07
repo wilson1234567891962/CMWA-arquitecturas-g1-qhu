@@ -11,6 +11,6 @@ report_schema = ReportSchema()
 
 class VistaReport(Resource):
 
-    def get(self):
+    def post(self):
         return [report_schema.dump(ca) for ca in Evento.query.filter(id == request.json["id"]).all()]
 
